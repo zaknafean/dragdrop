@@ -7,6 +7,10 @@ var candidates = []
 
 export var drag_group = "draggable"
 export (bool) var clamp_to_screen = false
+export (int) var offset_left = 0
+export (int) var offset_right = 64
+export (int) var offset_top = 64
+export (int) var offset_bottom = 0
 
 onready var screen_size = get_viewport_rect().size
 
@@ -27,14 +31,14 @@ func _process(_delta):
 		var newPosition = current.get_global_mouse_position() - drag_offset
 		
 		if clamp_to_screen:
-			if newPosition.x > screen_size.x - 64:
-				newPosition.x = screen_size.x - 64
-			if newPosition.x < 0:
-				newPosition.x = 0
-			if newPosition.y > screen_size.y - 64:
-				newPosition.y = screen_size.y - 64
-			if newPosition.y < 0:
-				newPosition.y = 0
+			if newPosition.x > screen_size.x - offset_right:
+				newPosition.x = screen_size.x - offset_right
+			if newPosition.x < offset_left:
+				newPosition.x = offset_left
+			if newPosition.y > screen_size.y - offset_top:
+				newPosition.y = screen_size.y - offset_top
+			if newPosition.y < offset_bottom:
+				newPosition.y = offset_bottom
 		
 		current.set_global_position(newPosition)
 
