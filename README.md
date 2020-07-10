@@ -2,8 +2,9 @@
 
 1. Add the `DragDropController` node in your scene.
 2. In the inspector, fill in Drag Group with the name of the group containing nodes you want to be draggable, by default, the group is named "draggable".
-3. (optional) In the node that can be dragged, you can create two methods : `on_drop` and `on_drag_start`
+3. If you wish to Clamp drag and drop to the visible screen coordinates, toggle Clamp To Screen. You may also set offsets (in pixels) to shrink the draggable area further.
 4. Please note, draggable componenets must Inheret from CollisionObject2D or Control type nodes
+5. (optional) In the node that can be dragged, you can create two methods : `on_drop` and `on_drag_start`
 
 ## on_drop
 
