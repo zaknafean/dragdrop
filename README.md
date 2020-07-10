@@ -3,6 +3,7 @@
 1. Add the `DragDropController` node in your scene.
 2. In the inspector, fill in Drag Group with the name of the group containing nodes you want to be draggable, by default, the group is named "draggable".
 3. (optional) In the node that can be dragged, you can create two methods : `on_drop` and `on_drag_start`
+4. Please note, draggable componenets must Inheret from CollisionObject2D or Control type nodes
 
 ## on_drop
 
@@ -29,3 +30,4 @@ func on_drop():
 ## on_drag_start
 
 Called when the node begin to be dragged. (if multiple nodes are stacked, only the topmost node will be dragged)
+
